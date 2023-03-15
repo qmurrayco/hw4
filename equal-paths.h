@@ -29,4 +29,6 @@ struct Node {
  */
 bool equalPaths(Node * root);
 
+bool stepCount(Node* root, int& pathVal, int lvl);
+
 #endif
