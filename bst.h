@@ -482,7 +482,6 @@ void BinarySearchTree<Key, Value>::insert(const std::pair<const Key, Value> &key
 	//its either less than, greater than, or equal. three conditions
 	//i cant think of any way to do this without recursion
 	insertRecursion(keyValuePair, root_);
-	printRoot(this->root_);
 }
 
 template<class Key, class Value>
