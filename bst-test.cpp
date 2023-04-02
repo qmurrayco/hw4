@@ -9,27 +9,26 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     // Binary Search Tree tests
-    BinarySearchTree<uint16_t,uint16_t> bt;
+    BinarySearchTree<int,int> bt;
 
 		//testing InsertZigZigLeft
-		bt.insert(std::make_pair(5, 8));
-		// std::cout << "pass one" << std::endl;
-		bt.insert(std::make_pair(3, 159));
-		// std::cout << "pass two" << std::endl;
-		bt.insert(std::make_pair(1, 9));
-		// std::cout << "pass three" << std::endl;
-		bt.insert(std::make_pair(10, 0x5a));
-		// std::cout << "pass four" << std::endl;
-		bt.insert(std::make_pair(15, 0xb));
-		// std::cout << "pass five" << std::endl;
-		// bt.insert(std::make_pair(2, 4));
-		// std::cout << "pass six" << std::endl;
-		// bt.insert(std::make_pair(4, 159));
-		// std::cout << "pass seven" << std::endl;
+		bt.insert(std::make_pair(2, 8));
+		std::cout << "pass one" << std::endl;
+		bt.insert(std::make_pair(1, -50));
+		std::cout << "pass two" << std::endl;
+		bt.insert(std::make_pair(3, 0));
+		std::cout << "pass three" << std::endl;
+		bt.insert(std::make_pair(10, 0));
+		std::cout << "pass four" << std::endl;
+		bt.insert(std::make_pair(15, 0));
+		std::cout << "pass five" << std::endl;
+		//bt.insert(std::make_pair(2, 4));
+		//std::cout << "pass six" << std::endl;
+		//bt.insert(std::make_pair(4, 159));
+		//std::cout << "pass seven" << std::endl;
 
-		// bt.clear();
+		bt.print();
 
-		// std::cout << "past clear" << std::endl;
 
 
     // bt.insert(std::make_pair('a',1));

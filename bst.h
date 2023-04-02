@@ -597,22 +597,25 @@ Node<Key, Value>*
 BinarySearchTree<Key, Value>::predecessor(Node<Key, Value>* current)
 {
     // TODO
+		Node<Key, Value> *walker = current;
 		//left child exists
-		if(current->getLeft() != NULL){
-			current = current->getLeft();
-			while(current->getRight() != NULL){
-				current = current->getRight();
+		if(walker->getLeft() != NULL){
+			walker = walker->getLeft();
+			while(walker->getRight() != NULL){
+				walker = walker->getRight();
 			}
 
-			return current;
+			return walker;
 		}else{
 			//walk up ancestor chain until traverse to first right child
-			while(current != NULL || current->getRight() == NULL){
-				current = current->getParent();
+			walker = walker->getParent();
+			while(walker != NULL){
+				if(walker->getRight() != NULL && walker->getKey() < current->getKey()){return walker;}
+				walker = walker->getParent();
 			}
 
-			if(current == NULL){return current;}
-			else{return current->getRight();}
+			if(walker == NULL){return walker;}
+			else{return walker->getRight();}
 		}
 }
 
@@ -636,10 +639,12 @@ BinarySearchTree<Key,Value>::successor(Node<Key, Value>* current)
 		walker = walker->getParent();
 
 		while(walker != NULL){
-			if(walker->getLeft() != NULL && walker != current){return walker;}
+			if(walker->getLeft() != NULL && walker->getKey() > current->getKey()){	
+				return walker;
+			}
 			walker = walker->getParent();
 		}
-
+		std::cout << "out of while loop returning"<<std::endl;
 		return walker;
 	}
 }
